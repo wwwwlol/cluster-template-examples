@@ -27,20 +27,17 @@ questions:
   - custom
   group: "General"
 - variable: kubernetesVersion
-  default: v1.22.6+rke2r1
+  default: v1.32.3+rke2r1
   description: "Specify Kubernetes version"
   label: "Kubernetes Version"
   type: enum
   required: true
   options:
-  - v1.21.6+rke2r1
-  - v1.21.7+rke2r1
-  - v1.21.8+rke2r1
-  - v1.21.9+rke2r1
-  - v1.22.5+rke2r1
-  - v1.21.6+rke2r1
+  - v1.32.3+rke2r1
+  - v1.31.7+rke2r1
+  - v1.30.11+rke2r1
   group: "General"
-- variable: rke.localClusterAuthEndpoint.enabled
+- variable: localClusterAuthEndpoint.enabled
   default: false
   label: "Local Auth endpoint"
   description: "Enable local auth access endpoint"
@@ -48,13 +45,13 @@ questions:
   group: "Auth Access Endpoint"
   show_subquestion_if: true
   subquestions:
-  - variable: rke.localClusterAuthEndpoint.fqdn
-    default:
+  - variable: localClusterAuthEndpoint.fqdn
+    default: ""
     description: "Local auth access endpoint FQDN"
     label: "Auth Endpoint FQDN"
     type: hostname
     group: "Auth Access Endpoint"
-  - variable: rke.localClusterAuthEndpoint.caCerts
+  - variable: localClusterAuthEndpoint.caCerts
     default:
     label: "Auth Endpoint Cacerts"
     description: "Local auth access endpoint CACerts"

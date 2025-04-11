@@ -17,11 +17,9 @@ cloudprovider: "digitalocean"
 
 kubernetesVersion: ""
 
-# general RKE options
-rke:
-  # enable local auth endpoint
-  localClusterAuthEndpoint:
-    enabled: false
+# enable local auth endpoint
+localClusterAuthEndpoint:
+  enabled: false
   # specify fqdn of local access endpoint
   # fqdn: foo.bar.example
   # specify cacert of local access endpoint

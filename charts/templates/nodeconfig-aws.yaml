@@ -14,15 +14,6 @@ blockDurationMinutes: {{ $nodepool.blockDurationMinutes }}
 {{- if $nodepool.deviceName }}
 deviceName: {{ $nodepool.deviceName }}
 {{- end }}
-common:
-{{- if $nodepool.labels }}
-  labels:
-{{ toYaml $nodepool.labels | indent 4 }}
-{{- end }}
-{{- if $nodepool.taints }}
-  taints:
-{{ toYaml $nodepool.taints | indent 4 }}
-{{- end }}
 {{- if $nodepool.encryptEbsVolume }}
 encryptEbsVolume: {{ $nodepool.encryptEbsVolume }}
 {{- end }}
@@ -60,10 +51,10 @@ region: {{ $nodepool.region }}
 requestSpotInstance: {{ $nodepool.requestSpotInstance }}
 {{- end }}
 {{- if $nodepool.retries }}
-retries: {{ $nodepool.retries }}
+retries: {{ $nodepool.retries | quote }}
 {{- end }}
 {{- if $nodepool.rootSize }}
-rootSize: {{ $nodepool.rootSize }}
+rootSize: {{ $nodepool.rootSize | quote }}
 {{- end }}
 securityGroup:
 {{- if $nodepool.createSecurityGroup }}
@@ -78,7 +69,7 @@ securityGroupReadonly: {{ $nodepool.securityGroupReadonly }}
 sessionToken: {{ $nodepool.sessionToken }}
 {{- end }}
 {{- if $nodepool.spotPrice }}
-spotPrice: {{ $nodepool.spotPrice }}
+spotPrice: {{ $nodepool.spotPrice | quote }}
 {{- end }}
 {{- if $nodepool.sshKeyContents }}
 sshKeyContents: {{ $nodepool.sshKeyContents }}
@@ -128,15 +119,6 @@ blockDurationMinutes: {{ $nodepool.blockDurationMinutes }}
 {{- if $nodepool.deviceName }}
 deviceName: {{ $nodepool.deviceName }}
 {{- end }}
-common:
-{{- if $nodepool.labels }}
-  labels:
-{{ toYaml $nodepool.labels | indent 4 }}
-{{- end }}
-{{- if $nodepool.taints }}
-  taints:
-{{ toYaml $nodepool.taints | indent 4 }}
-{{- end }}
 {{- if $nodepool.encryptEbsVolume }}
 encryptEbsVolume: {{ $nodepool.encryptEbsVolume }}
 {{- end }}
@@ -174,10 +156,10 @@ region: {{ $nodepool.region }}
 requestSpotInstance: {{ $nodepool.requestSpotInstance }}
 {{- end }}
 {{- if $nodepool.retries }}
-retries: {{ $nodepool.retries }}
+retries: {{ $nodepool.retries | quote }}
 {{- end }}
 {{- if $nodepool.rootSize }}
-rootSize: {{ $nodepool.rootSize }}
+rootSize: {{ $nodepool.rootSize | quote }}
 {{- end }}
 {{- if $nodepool.createSecurityGroup }}
 securityGroup:

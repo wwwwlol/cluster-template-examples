@@ -18,11 +18,11 @@ spec:
   {{- if .Values.kubernetesVersion }}
   kubernetesVersion: {{ .Values.kubernetesVersion }}
   {{- end }}
-  {{- if .Values.rke.localClusterAuthEndpoint.enabled }}
+  {{- if .Values.localClusterAuthEndpoint.enabled }}
   localClusterAuthEndpoint:
-    enabled: {{ .Values.rke.localClusterAuthEndpoint.enabled }}
-    fqdn: {{ .Values.rke.localClusterAuthEndpoint.fqdn }}
-    caCerts: {{ .Values.rke.localClusterAuthEndpoint.caCerts }}
+    enabled: {{ .Values.localClusterAuthEndpoint.enabled }}
+    fqdn: {{ .Values.localClusterAuthEndpoint.fqdn }}
+    caCerts: {{ .Values.localClusterAuthEndpoint.caCerts }}
   {{- end }}
   # enable network policy
   enableNetworkPolicy: true
@@ -56,6 +56,14 @@ spec:
       rollingUpdate:
         maxUnavailable: {{ $nodepool.rollingUpdate.maxUnavailable }}
         maxSurge: {{ $nodepool.rollingUpdate.maxSurge }}
+      {{- end }}
+      {{- if $nodepool.labels }}
+      labels:
+{{ toYaml $nodepool.labels | indent 8 }}
+      {{- end }}
+      {{- if $nodepool.taints }}
+      taints:
+{{ toYaml $nodepool.taints | indent 8 }}
       {{- end }}
       {{- if $nodepool.machineDeploymentLabels }}
       machineDeploymentLabels:
@@ -93,6 +101,14 @@ spec:
       rollingUpdate:
         maxUnavailable: {{ $nodepool.rollingUpdate.maxUnavailable }}
         maxSurge: {{ $nodepool.rollingUpdate.maxSurge }}
+      {{- end }}
+      {{- if $nodepool.labels }}
+      labels:
+{{ toYaml $nodepool.labels | indent 8 }}
+      {{- end }}
+      {{- if $nodepool.taints }}
+      taints:
+{{ toYaml $nodepool.taints | indent 8 }}
       {{- end }}
       {{- if $nodepool.machineDeploymentLabels }}
       machineDeploymentLabels:
