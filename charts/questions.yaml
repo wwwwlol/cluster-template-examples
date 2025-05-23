@@ -4,21 +4,21 @@ questions:
   description: "Set the HTTP proxy for agents"
   label: "HTTP Proxy"
   type: string
-  group: "Agent Environment Variables"
+  group: "General"
 
 - variable: agentEnvs.HTTPS_PROXY
   default: ""
   description: "Set the HTTPS proxy for agents"
   label: "HTTPS Proxy"
   type: string
-  group: "Agent Environment Variables"
+  group: "General"
 
 - variable: agentEnvs.NO_PROXY
   default: ""
   description: "Set the NO_PROXY list (comma-separated) for agents"
   label: "NO_PROXY"
   type: string
-  group: "Agent Environment Variables"
+  group: "General"
 - variable: cluster.name
   default: mycluster
   description: "Specify the name of the cluster"
