@@ -5,7 +5,6 @@ questions:
   label: "HTTP Proxy"
   type: string
   group: "General"
-
 - variable: cluster.name
   default: mycluster
   description: "Specify the name of the cluster"
