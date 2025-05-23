@@ -15,9 +15,8 @@ cloudCredentialSecretName: ""
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 cloudprovider: "amazonec2"
 
-agentEnvs: {}
-      # - name: key
-      #   value: value
+agentEnvs: 
+       HTTP_PROXY: test
 
 kubernetesVersion: "v1.27.16+rke2r2"
 
