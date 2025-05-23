@@ -76,7 +76,6 @@ nodepools:
   
   # Optional endpoint URL (hostname only or fully qualified)
   endpoint: ""
-
   # AWS IAM Instance Profile
   iamInstanceProfile: ""
 
